@@ -1,0 +1,15 @@
+{
+  "name": "02-scss",
+  "version": "1.0.0",
+  "description": "SCSS Exercises",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "ralvarezdev",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.3"
+  }
+}

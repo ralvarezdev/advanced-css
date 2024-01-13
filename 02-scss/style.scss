@@ -1,0 +1,109 @@
+// Variables
+$color-primary: yellow;
+$color-secondary: orange;
+$color-tertiary: blue;
+$color-text-dark: black;
+$color-text-light: white;
+
+$btn-width: 150px;
+
+// Mixins
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+// Functions
+/*
+@function divide($a, $b) {
+  @return $a/$b;
+}
+*/
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  margin: 30px;
+  background-color: $color-primary;
+
+  // Include Clearfix nav::after
+  @include clearfix;
+}
+
+.navigation {
+  float: left;
+
+  list-style: none;
+
+  // .navigation li
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    // li:first-child
+    &:first-child {
+      margin: 0;
+    }
+
+    a {
+      @include style-link-text($color-text-dark)
+    }
+  }
+}
+
+// Placeholder
+%btn-placeholder {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 100px;
+  width: $btn-width;
+
+  text-align: center;
+  @include style-link-text($color-text-light);
+}
+
+.button {
+  float: right;
+
+  .btn-main,
+  .btn-hot {
+    &:visited {
+      color: $color-text-light;
+    }
+  }
+
+  .btn-main {
+    &:link {
+      // Extend
+      @extend %btn-placeholder;
+      background-color: $color-secondary;
+    }
+
+    &:hover {
+      background-color: darken($color-secondary, 15%);
+    }
+  }
+
+  .btn-hot {
+    &:link {
+      @extend %btn-placeholder;
+      background-color: darken($color-tertiary, 15%);
+    }
+
+    &:hover {
+      background-color: lighten($color-tertiary, 15%);
+    }
+  }
+}
