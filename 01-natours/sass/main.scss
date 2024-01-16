@@ -9,23 +9,42 @@ Medium grey: #777
 
 */
 
-/* --- Universal Rest */
-* {
+// Colors
+$color-grey: #777;
+$color-white: #fff;
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+/* --- Universal Selector. Global Rest */
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+/* --- Root Properties */
+html {
+  /* Percentage of User's Browser font-size Setting 
+      
+  10px / 16px = 0.625
+  */
+  font-size: 62.5%;
 }
 
 /* --- Font Properties */
 body {
-  padding: 30px;
+  box-sizing: border-box;
+  padding: 3rem;
 
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   line-height: 1.7;
 
-  color: #777;
+  color: $color-grey;
 }
 
 /* --- Header Formatting */
@@ -34,7 +53,10 @@ body {
   height: 95vh;
 
   /* Image on Top */
-  background-image: linear-gradient(to right, rgb(126, 213, 111, 0.8), rgb(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right,
+      rgb($color-primary-light, 0.8),
+      rgb($color-primary-dark, 0.8)),
+    url("../img/hero.jpg");
   background-size: cover;
   background-position: top;
 
@@ -43,22 +65,22 @@ body {
 }
 
 /* --- Logo */
-.logo-box {
+.header__logo-box {
   position: absolute;
   /* Parent must have a Relative Position */
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
-.logo {
-  height: 35px;
+.header__logo {
+  height: 3.5rem;
 }
 
 /* --- Headings */
 .heading-primary {
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 
-  color: #fff;
+  color: $color-white;
   text-transform: uppercase;
 
   /*
@@ -68,17 +90,18 @@ body {
 
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
 
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 1s;
   animation-delay: 500ms;
   animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 
   /* 
   animation-name
@@ -89,22 +112,23 @@ body {
   */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   /* To Display One below the Other */
   display: block;
 
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 18px;
+  letter-spacing: 1.8rem;
 
   animation-name: moveInRight;
   animation-duration: 1s;
   animation-delay: 500ms;
   animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
 }
 
 /* --- To Center Headings */
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -170,31 +194,32 @@ body {
 .btn:visited {
   display: inline-block;
   position: relative;
-  border-radius: 100px;
+  border-radius: 10rem;
 
+  font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px;
+  padding: 1.5rem 4rem;
 
   transition: all 200ms;
 }
 
 .btn:hover {
-  box-shadow: 0 10px 20px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgb(0, 0, 0, .2);
 
   transform: translateY(-3px);
 }
 
 .btn:active {
-  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.2);
+  box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
 
   transform: translateY(-1px);
 }
 
-.btn-white,
-.btn-white::after {
-  background-color: #fff;
-  color: #777;
+.btn--white,
+.btn--white::after {
+  background-color: $color-white;
+  color: $color-grey;
 }
 
 .btn::after {
@@ -208,7 +233,7 @@ body {
   height: 100%;
   /* Of the Width of the Button */
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
 
   transition: all 300ms;
 }
@@ -218,7 +243,7 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInBottom 500ms ease-out 750ms;
   animation-fill-mode: backwards;
   /* Set Initial State of the Animation as the Initial Button Properties */
