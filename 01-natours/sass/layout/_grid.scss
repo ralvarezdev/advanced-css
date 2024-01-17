@@ -1,0 +1,58 @@
+/*
+NOTE:
+This project uses floats in order to recreate a CSS grid. Later on, I'll probably make a remake of this by using modern CSS techniques, including the aforementioned CSS layout
+*/
+
+.row {
+  max-width: $grid-width;
+  background-color: #eee;
+
+  /* To Center the Container */
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  .cols2--col1 {
+    /* THERE MUST BE SPACES AROUND THE MATH OPERATORS */
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .cols3--col1 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+  }
+
+  .cols3--col2 {
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3 * 2 + #{$gutter-horizontal});
+  }
+
+  .cols4--col1 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+  }
+
+  .cols4--col2 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4 * 2 + #{$gutter-horizontal});
+  }
+
+  .cols4--col3 {
+    width: calc((100% - 3 * #{$gutter-horizontal}) / 4 * 3 + 2 * #{$gutter-horizontal});
+  }
+
+  // Select All Classes that Start with "col-"
+  [class^="cols"] {
+    background-color: orange;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  // Select All Classes that End with "-1"
+  /*
+  [class$="-1"]
+  */
+
+  @include clearfix;
+}
