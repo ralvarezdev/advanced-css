@@ -1,0 +1,61 @@
+/* --- Font Properties */
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+
+  color: $color-grey;
+}
+
+/* --- Headings */
+.heading-primary {
+  margin-bottom: 6rem;
+
+  color: $color-white;
+  text-transform: uppercase;
+
+  /*
+  If It Shakes a Little bit 
+  backface-visibility: hidden
+  */
+
+  &--main {
+    display: block;
+
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-delay: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+
+    /* 
+    animation-name
+    animation-delay
+    animation-delay
+    animation-iteration-count
+    animation-timing
+    */
+  }
+
+  &--sub {
+    /* To Display One below the Other */
+    display: block;
+
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.8rem;
+
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-delay: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: backwards;
+  }
+}
