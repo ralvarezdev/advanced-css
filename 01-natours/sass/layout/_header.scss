@@ -12,6 +12,7 @@
   background-position: top;
 
   /* Clockwise */
+  -webkit-clip-path: (0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
   /* --- Logo */
