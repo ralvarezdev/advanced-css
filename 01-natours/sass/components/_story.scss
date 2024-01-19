@@ -1,0 +1,74 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  padding: 6rem;
+  padding-left: 9rem;
+  position: relative;
+
+  border-radius: 3px;
+
+  font-size: $def-font-size;
+
+  background-color: rgba($color-white, .6);
+  box-shadow: 0 3rem 6rem rgba($color-black, .1);
+
+  transform: skew(-12deg);
+
+  &>* {
+    transform: skew(12deg);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left; // Must be floated. NOTE: figure is a Block Element
+
+    background-color: black;
+
+    // Radius and Center Coordinates
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    // Look like a Circle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    transform: translate(-3rem, -2rem) skew(12deg); // skew Transform Must be Added Manually. If not, It'll be Overwritten
+  }
+
+  // Must Assign Width to Flexible Images
+  &__img {
+    height: 100%; // I Used Height to Assigned its Size, because It's Smaller Compared to the Width of this Image
+
+    transform: translateX(-3rem) scale(1.5);
+
+    transition: all 500ms;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    opacity: 0;
+
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-white;
+
+    transition: all 500ms;
+
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-3rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}

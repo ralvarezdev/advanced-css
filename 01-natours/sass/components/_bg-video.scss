@@ -1,0 +1,22 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  opacity: .15;
+
+  // In Brave Browser, for 2024, It isn't Necessary. But, I Added for Old-browsers Support
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover; // Similar to background-size, but for Videos, instead of Images
+
+    filter: blur(1px); // Personal Preference
+  }
+}
