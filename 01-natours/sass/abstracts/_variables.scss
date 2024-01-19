@@ -10,9 +10,10 @@ Medium grey: #777
 */
 
 // Colors
-$color-grey: #777;
 $color-grey-light1: #f7f7f7;
 $color-grey-light2: #eee;
+$color-grey-dark1: #999;
+$color-grey-dark2: #777;
 $color-white: #fff;
 $color-black: #000;
 
@@ -33,3 +34,6 @@ $def-font-size: 1.6rem;
 $grid-width: 114rem;
 $gutter-vertical: 8rem;
 $gutter-horizontal: 6rem;
+
+// Sizes
+$def-border-radius: 3px;

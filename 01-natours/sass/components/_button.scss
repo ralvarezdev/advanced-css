@@ -1,5 +1,6 @@
 .btn {
 
+  &,
   &:link,
   &:visited {
     display: inline-block;
@@ -12,6 +13,10 @@
     padding: 1.5rem 4rem;
 
     transition: all 200ms;
+
+    // Change for the <button> Element
+    border: none;
+    cursor: pointer;
   }
 
   &:hover {
@@ -25,7 +30,8 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
     box-shadow: 0 .5rem 1rem rgb($color-black, .2);
 
     transform: translateY(-1px);
@@ -34,7 +40,7 @@
   &--white,
   &--white::after {
     background-color: $color-white;
-    color: $color-grey;
+    color: $color-grey-dark2;
   }
 
   &--green,
