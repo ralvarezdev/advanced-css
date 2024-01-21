@@ -50,3 +50,38 @@
     opacity: 1;
   }
 }
+
+@keyframes fadeIn {
+
+  /* --- Start State */
+  0% {
+    opacity: 0;
+  }
+
+  /* --- End State */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+
+  /* --- Start State */
+  0% {
+    opacity: 1;
+  }
+
+  /* --- End State */
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideBlock {
+
+  /* --- End State */
+  100% {
+    display: none;
+    visibility: hidden;
+  }
+}
