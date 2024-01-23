@@ -6,6 +6,10 @@
   color: $color-grey-light1;
   background-color: $color-grey-dark3;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
@@ -22,12 +26,22 @@
     padding-top: 2rem;
 
     border-top: 1px solid $color-grey-light2;
+
+    @include respond(tab-port) {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__copyright {
     width: 80%;
 
     float: right;
+
+    @include respond(tab-port) {
+      width: 100%;
+      float: none;
+    }
   }
 
   &__list {

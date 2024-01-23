@@ -15,4 +15,30 @@ html {
   */
   font-size: 62.5%;
   scroll-behavior: smooth;
+
+  // When Using max-width. It Must be Ordered from the Biggest Screens to the Smallest
+  @include respond(tab-land) {
+    // 9px / 16px = 0.5625
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    // 8px / 16px = 0.5
+    font-size: 50%;
+  }
+
+  // When Using min-width. It Must be Ordered from the Smallest Screens to the Biggest
+  @include respond(big-desktop) {
+    // 12px / 16px = 0.75
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
