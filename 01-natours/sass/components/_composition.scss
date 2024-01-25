@@ -12,6 +12,15 @@
 
     transition: all 200ms;
 
+    @include respond(tab-port) {
+      float: left;
+      position: relative;
+      width: calc(1/3) * 100%;
+      margin-top: $def-margin-medium;
+
+      box-shadow: 0 1.5rem 3rem rgba($color-black, .3);
+    }
+
     &:hover {
       transform: scale(1.05) translateY(-0.5rem);
       z-index: 20;
@@ -23,16 +32,36 @@
     &--p1 {
       left: 0;
       top: -2rem;
+
+      @include respond(tab-port) {
+        top: 1rem;
+
+        transform: scale(1.2);
+      }
     }
 
     &--p2 {
       right: 0;
       top: 2rem;
+
+      @include respond(tab-port) {
+        top: -1rem;
+        z-index: 100;
+
+        transform: scale(1.3);
+      }
     }
 
     &--p3 {
       left: 20%;
       top: 10rem;
+
+      @include respond(tab-port) {
+        left: 0;
+        top: 1rem;
+
+        transform: scale(1.1);
+      }
     }
   }
 
